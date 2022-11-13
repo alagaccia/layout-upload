@@ -1,0 +1,17 @@
+{
+    "name": "alagaccia/layout-upload",
+    "description": "Dropbox to upload files",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Alagaccia\\LayoutUpload\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andrea Lagaccia",
+            "email": "info@deltadigital.it"
+        }
+    ],
+    "require": {}
+}
