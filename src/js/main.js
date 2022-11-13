@@ -110,6 +110,9 @@ const UploadFiles =
 				$row.find(".file-download").attr('href', risposta.download_route);
 				$row.find(".file-category").text(risposta.type);
                 $row.find(".destroy").attr('data-url', risposta.delete_route);
+
+                $row.find(".extra-info").html(risposta.extra.text);
+                $row.find(".extra-info").class(risposta.extra.class);
     		} else {
                 progress.attr("class", "progress is-danger");
                 if ( msg.currentTarget.response ) {
