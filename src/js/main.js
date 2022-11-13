@@ -103,7 +103,8 @@ const UploadFiles =
                 $(uploadArea).removeClass("over");
 
                 var res = $.parseJSON(msg.currentTarget.response);
-
+                console.log(res);
+                
 				$row.attr("id", 'media-' + res.media_id);
 				$row.find(".file-title a").attr("href", res.download_route);
 				$row.find(".file-title .name").text(res.filename);
