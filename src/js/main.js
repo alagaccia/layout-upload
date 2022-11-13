@@ -102,24 +102,24 @@ const UploadFiles =
 
                 $(uploadArea).removeClass("over");
 
-                var risposta = $.parseJSON(msg.currentTarget.response);
+                var res = $.parseJSON(msg.currentTarget.response);
 
-				$row.attr("id", 'media-' + risposta.media_id);
-				$row.find(".file-title a").attr("href", risposta.download_route);
-				$row.find(".file-title .name").text(risposta.filename);
-				$row.find(".file-download").attr('href', risposta.download_route);
-				$row.find(".file-category").text(risposta.type);
-                $row.find(".destroy").attr('data-url', risposta.delete_route);
+				$row.attr("id", 'media-' + res.media_id);
+				$row.find(".file-title a").attr("href", res.download_route);
+				$row.find(".file-title .name").text(res.filename);
+				$row.find(".file-download").attr('href', res.download_route);
+				$row.find(".file-category").text(res.type);
+                $row.find(".destroy").attr('data-url', res.delete_route);
 
-                if (risposta.extra.text)
-                    $row.find(".extra-info").html(risposta.extra.text);
+                if (res.extra.text) {
+                    $row.find(".extra-info").html(res.extra.text);
                 }
-                if (risposta.extra.class)
-                    $row.find(".extra-info").class(risposta.extra.class);
+                if (res.extra.class) {
+                    $row.find(".extra-info").class(res.extra.class);
                 }
 
-                if(risposta.extraRow.html) {
-                    $row.after('<tr class="'+risposta.extraRow.class+'"><td colspan="100">' + risposta.extraRow.html + '</td></tr>');
+                if(res.extraRow.html) {
+                    $row.after('<tr class="'+res.extraRow.class+'"><td colspan="100">' + res.extraRow.html + '</td></tr>');
                 }
     		} else {
                 progress.attr("class", "progress is-danger");
