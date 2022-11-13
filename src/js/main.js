@@ -111,8 +111,12 @@ const UploadFiles =
 				$row.find(".file-category").text(risposta.type);
                 $row.find(".destroy").attr('data-url', risposta.delete_route);
 
-                $row.find(".extra-info").html(risposta.extra.text);
-                $row.find(".extra-info").class(risposta.extra.class);
+                if (risposta.extra.text)
+                    $row.find(".extra-info").html(risposta.extra.text);
+                }
+                if (risposta.extra.class)
+                    $row.find(".extra-info").class(risposta.extra.class);
+                }
 
                 if(risposta.extraRow.html) {
                     $row.after('<tr class="'+risposta.extraRow.class+'"><td colspan="100">' + risposta.extraRow.html + '</td></tr>');
