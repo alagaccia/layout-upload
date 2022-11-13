@@ -104,7 +104,7 @@ const UploadFiles =
 
                 var risposta = $.parseJSON(msg.currentTarget.response);
 
-				$row.attr("id", 'attachment-' + risposta.attachment_id);
+				$row.attr("id", 'media-' + risposta.media_id);
 				$row.find(".file-title a").attr("href", risposta.download_route);
 				$row.find(".file-title .name").text(risposta.filename);
 				$row.find(".file-download").attr('href', risposta.download_route);
