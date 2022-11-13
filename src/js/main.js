@@ -113,6 +113,10 @@ const UploadFiles =
 
                 $row.find(".extra-info").html(risposta.extra.text);
                 $row.find(".extra-info").class(risposta.extra.class);
+
+                if(risposta.extraRow.html) {
+                    $row.after('<tr class="'+risposta.extraRow.class+'"><td colspan="100">' + risposta.extraRow.html + '</td></tr>');
+                }
     		} else {
                 progress.attr("class", "progress is-danger");
                 if ( msg.currentTarget.response ) {
