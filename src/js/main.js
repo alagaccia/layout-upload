@@ -112,7 +112,6 @@ const UploadFiles =
                 $row.find(".destroy").attr('data-url', res.delete_route);
 
                 if (res.extra) {
-
                     if (res.extra.text) {
                         $row.find(".extra-info").html(res.extra.text);
                     }
