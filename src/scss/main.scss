@@ -1,0 +1,37 @@
+.upload-box, .upload-gallery, .upload-media {
+    background: #F2F2FF;
+    border: 2px dashed gray;
+    color: gray;
+    font-size: 20px;
+    margin: 0 0 40px 0;
+    padding: 10px; text-align:center;
+
+    &.over {
+        background: #F5F5BB;
+        border-color: #FFA500;
+    }
+
+    > input[type="file"] {
+        display: block;
+        font-size: 14px;
+    }
+    > p {
+        margin:0;
+    }
+}
+
+.upload-result {
+    .uploaded-file {
+        .file-name {
+
+        }
+        .file-size {
+
+        }
+        .progress-row {
+            > .progress {
+                margin:0;
+            }
+        }
+    }
+}
