@@ -111,15 +111,19 @@ const UploadFiles =
 				$row.find(".file-category").text(res.type);
                 $row.find(".destroy").attr('data-url', res.delete_route);
 
-                if (res.extra.text) {
-                    $row.find(".extra-info").html(res.extra.text);
-                }
-                if (res.extra.class) {
-                    $row.find(".extra-info").class(res.extra.class);
-                }
+                if (res.extra) {
 
-                if(res.extraRow.html) {
-                    $row.after('<tr class="'+res.extraRow.class+'"><td colspan="100">' + res.extraRow.html + '</td></tr>');
+                    if (res.extra.text) {
+                        $row.find(".extra-info").html(res.extra.text);
+                    }
+                    if (res.extra.class) {
+                        $row.find(".extra-info").class(res.extra.class);
+                    }
+                }
+                if (res.extraRow) {
+                    if(res.extraRow.html) {
+                        $row.after('<tr class="'+res.extraRow.class+'"><td colspan="100">' + res.extraRow.html + '</td></tr>');
+                    }
                 }
     		} else {
                 progress.attr("class", "progress is-danger");
