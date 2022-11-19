@@ -137,7 +137,6 @@ const UploadFiles =
                             } else {
                                 $(res.element).html(data);
                             }
-                            window.ajaxAfter();
                         });
                     });
                 }
