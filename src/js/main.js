@@ -104,7 +104,7 @@ const UploadFiles =
 
                 var res = $.parseJSON(msg.currentTarget.response);
                 console.log(res);
-                
+
 				$row.attr("id", 'media-' + res.media_id);
 				$row.find(".file-title a").attr("href", res.download_route);
 				$row.find(".file-title .name").text(res.filename);
@@ -124,6 +124,22 @@ const UploadFiles =
                     if(res.extraRow.html) {
                         $row.after('<tr class="'+res.extraRow.class+'"><td colspan="100">' + res.extraRow.html + '</td></tr>');
                     }
+                }
+
+                // Operazioni in ajax
+                if (res.load){
+                    $.each(res.load, function(i, value){
+                        $.get(res.page, function(data){
+                            if (res.prepend){
+                                $(res.element).prepend(data);
+                            } else if (res.replace){
+                                $(res.element).replaceWith(data);
+                            } else {
+                                $(res.element).html(data);
+                            }
+                            window.ajaxAfter();
+                        });
+                    });
                 }
     		} else {
                 progress.attr("class", "progress is-danger");
