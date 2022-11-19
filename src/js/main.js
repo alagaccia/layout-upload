@@ -129,13 +129,13 @@ const UploadFiles =
                 // Operazioni in ajax
                 if (res.load){
                     $.each(res.load, function(i, value){
-                        $.get(res.page, function(data){
-                            if (res.prepend){
-                                $(res.element).prepend(data);
-                            } else if (res.replace){
-                                $(res.element).replaceWith(data);
+                        $.get(value.page, function(data){
+                            if (value.prepend){
+                                $(value.element).prepend(data);
+                            } else if (value.replace){
+                                $(value.element).replaceWith(data);
                             } else {
-                                $(res.element).html(data);
+                                $(value.element).html(data);
                             }
                         });
                     });
