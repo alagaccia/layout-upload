@@ -118,7 +118,7 @@ const UploadFiles =
                         $row.find(".extra-info").html(res.extra.text);
                     }
                     if (res.extra.class) {
-                        $row.find(".extra-info").class(res.extra.class);
+                        $row.find(".extra-info").addClass(res.extra.class);
                     }
                 }
                 if (res.extraRow) {
