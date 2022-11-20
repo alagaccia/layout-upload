@@ -98,7 +98,7 @@ const UploadFiles =
     	xhr.addEventListener("load", function (msg) {
     		if (this.status == 200) {
                 progress.attr("class", "progress is-success");
-                progressText.text("CARICATO 100%");
+                progressText.text("100%");
 
                 $(uploadArea).removeClass("over");
 
@@ -146,7 +146,7 @@ const UploadFiles =
                 if ( msg.currentTarget.response ) {
                     progressText.text(msg.currentTarget.response);
                 } else {
-                    progressText.text("NON CARICATO. Errore " + this.status);
+                    progressText.text("ERROR " + this.status);
                 }
             }
 
