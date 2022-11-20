@@ -111,6 +111,7 @@ const UploadFiles =
 				$row.find(".file-download").attr('href', res.download_route);
 				$row.find(".file-category").text(res.type);
                 $row.find(".destroy").attr('data-url', res.delete_route);
+                $row.find(".destroy").attr('data-title', res.filename);
 
                 if (res.extra) {
                     if (res.extra.text) {
