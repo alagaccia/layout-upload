@@ -148,6 +148,8 @@ const UploadFiles =
                     progressText.text("NON CARICATO. Errore " + this.status);
                 }
             }
+
+            $("#empty-row").remove();
     	}, false);
         // Al termine dell'upload
     	xhr.addEventListener('readystatechange', function(e) {
