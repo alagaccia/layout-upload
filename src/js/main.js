@@ -108,6 +108,7 @@ const UploadFiles =
 				$row.attr("id", 'media-' + res.media_id);
 				$row.find(".file-title a").attr("href", res.download_route);
 				$row.find(".file-title .name").text(res.filename);
+                $row.find('.file-title [name="temp_id[]"]').val(res.media_id);
 				$row.find(".file-download").attr('href', res.download_route);
 				$row.find(".file-category").text(res.type);
                 $row.find(".destroy").attr('data-url', res.delete_route);
