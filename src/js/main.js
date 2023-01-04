@@ -106,8 +106,9 @@ const UploadFiles =
                 console.log(res);
 
 				$row.attr("id", 'media-' + res.media_id);
-				$row.find(".td-filename a").attr("href", res.download_route);
-				$row.find(".td-filename .name").text(res.filename);
+				$row.find(".td-filename a.download-route").attr("href", res.download_route);
+				$row.find(".td-filename a.show-route").attr("href", res.show_route);
+				$row.find(".td-filename a.show-route .filename").text(res.filename);
                 $row.find('.td-filename [name="temp_id[]"]').val(res.media_id);
 				$row.find(".td-filename").attr('href', res.download_route);
                 $row.find(".td-options .destroy").attr('data-url', res.delete_route);
