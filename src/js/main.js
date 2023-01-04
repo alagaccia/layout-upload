@@ -71,13 +71,13 @@ const UploadFiles =
         $row.find('.td-mime').text(file.type);
         // $row.find('.file-size').text(Math.round(file.size/1000) + ' KB');
 
-    	var progressText = $('<center><span>0%</span></center>');
+    	// var progressText = $('<center><span>0%</span></center>');
     	var progress = $('<progress class="progress is-info" value="" max="100"></progress>');
 
         // Cancello la riga no record
         $('.none').remove();
 
-        $row.find(".td-progress-cell").html(progressText);
+        // $row.find(".td-progress-cell").html(progressText);
         $row.find(".td-progress-cell").append(progress);
         $(target + '> tbody').prepend($row);
 
@@ -91,14 +91,14 @@ const UploadFiles =
                 // progressBar.attr("style", "width:" + (evt.loaded / evt.total) * 100 + "%" );
                 progress.attr("value", (evt.loaded / evt.total) * 100 );
                 progress.text( (evt.loaded / evt.total) * 100 + "%" );
-    			progressText.text( parseInt(((evt.loaded / evt.total) * 100), 10) + " %" );
+    			// progressText.text( parseInt(((evt.loaded / evt.total) * 100), 10) + " %" );
     		}
     	}, false);
         // Pagina caricata
     	xhr.addEventListener("load", function (msg) {
     		if (this.status == 200) {
                 progress.attr("class", "progress is-success");
-                progressText.text("100%");
+                // progressText.text("100%");
 
                 $(uploadArea).removeClass("over");
 
@@ -145,7 +145,7 @@ const UploadFiles =
     		} else {
                 progress.attr("class", "progress is-danger");
                 if ( msg.currentTarget.response ) {
-                    progressText.text(msg.currentTarget.response);
+                    // progressText.text(msg.currentTarget.response);
                 } else {
                     progressText.text("ERROR " + this.status);
                 }
