@@ -67,8 +67,8 @@ const UploadFiles =
             async: false
         });
 
-        $row.find(".file-title a .name").text(file.name);
-        $row.find('.file-mime').text(file.type);
+        $row.find(".td-filename a .name").text(file.name);
+        $row.find('.td-mime').text(file.type);
         // $row.find('.file-size').text(Math.round(file.size/1000) + ' KB');
 
     	var progressText = $('<center><span>0%</span></center>');
@@ -106,20 +106,19 @@ const UploadFiles =
                 console.log(res);
 
 				$row.attr("id", 'media-' + res.media_id);
-				$row.find(".file-title a").attr("href", res.download_route);
-				$row.find(".file-title .name").text(res.filename);
-                $row.find('.file-title [name="temp_id[]"]').val(res.media_id);
-				$row.find(".file-download").attr('href', res.download_route);
-				$row.find(".file-category").text(res.type);
-                $row.find(".destroy").attr('data-url', res.delete_route);
-                $row.find(".destroy").attr('data-title', res.filename);
+				$row.find(".td-filename a").attr("href", res.download_route);
+				$row.find(".td-filename .name").text(res.filename);
+                $row.find('.td-filename [name="temp_id[]"]').val(res.media_id);
+				$row.find(".td-filename").attr('href', res.download_route);
+                $row.find(".td-options .destroy").attr('data-url', res.delete_route);
+                $row.find(".td-options .destroy").attr('data-title', res.filename);
 
                 if (res.extra) {
                     if (res.extra.text) {
-                        $row.find(".extra-info").html(res.extra.text);
+                        $row.find(".td-error").html(res.extra.text);
                     }
                     if (res.extra.class) {
-                        $row.find(".extra-info").addClass(res.extra.class);
+                        $row.find(".td-error").addClass(res.extra.class);
                     }
                 }
                 if (res.extraRow) {
