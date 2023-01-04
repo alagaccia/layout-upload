@@ -77,8 +77,8 @@ const UploadFiles =
         // Cancello la riga no record
         $('.none').remove();
 
-        $row.find(".progress-cell").html(progressText);
-        $row.find(".progress-cell").append(progress);
+        $row.find(".td-progress-cell").html(progressText);
+        $row.find(".td-progress-cell").append(progress);
         $(target + '> tbody').prepend($row);
 
         // Creo un'istanza XMLHttpRequest
